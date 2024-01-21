@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodatabase
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: proj1
+    volumes:
+      - ./mongodata:/data/db
+    ports:
+      - "27017:27017"
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongodatabase
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongodb
+
+volumes:
+  mongodb_data:
