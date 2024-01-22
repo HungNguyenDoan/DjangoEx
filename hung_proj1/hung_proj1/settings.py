@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'product',
-    'djongo',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +84,7 @@ WSGI_APPLICATION = 'hung_proj1.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME' : 'Product',
+        'NAME' : 'product',
         'CLIENT': {
             'host': 'localhost',
             'port': 27017,
@@ -93,16 +92,16 @@ DATABASES = {
             'password': 'root',
         }
     },
-    'product': {
-        'ENGINE': 'djongo',
-        'NAME' : 'Product',
-        'CLIENT': {
-            'host': 'localhost',
-            'port': 27017,
-            'username': 'admin',
-            'password': 'root',
-        }
-    },
+    # 'product': {
+    #     'ENGINE': 'djongo',
+    #     'NAME' : 'Product',
+    #     'CLIENT': {
+    #         'host': 'localhost',
+    #         'port': 27017,
+    #         'username': 'admin',
+    #         'password': 'root',
+    #     }
+    # },
     # 'category': {
     #     'ENGINE': 'django.db.backends.mysql',
     #     'NAME': 'category',
